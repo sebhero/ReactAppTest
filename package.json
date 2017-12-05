@@ -1,0 +1,29 @@
+{
+  "name": "ReactAppTest3",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"error: no test\" && exit 1",
+    "watch-with-tsify": "watchify --debug --verbose --external react --external react-dom --plugin [ tsify ] --transform [ babelify --presets [ env react ] --extensions .tsx .ts ] ./src/index.tsx --outfile ./dist/bundle.js",
+    "watch-with-webstorm": "watchify -d -v -x react -x react-dom -t [ babelify --presets [ env react ] ] ./src/index.jsx -o ./dist/bundle.js",
+    "serve": "browser-sync start --server \"dist\" --files \"dist\"",
+    "start": "npm run watch-with-tsify | npm run serve",
+    "build": "browserify -v  -x react -x react-dom -p [ tsify ] -t [ babelify --presets [ env react ] --extensions .tsx .ts ] ./src/index.tsx -o ./dist/bundle.js",
+    "build1": "browserify -v  -x react -x react-dom -t [ babelify --presets [ env react ] ] ./src/index.jsx -o ./dist/bundle.js"
+  },
+  "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.27",
+    "@types/react-dom": "^16.0.3",
+    "browser-sync": "^2.18.13",
+    "tsify": "^3.0.4",
+    "typescript": "^2.6.2",
+    "watchify": "^3.9.0"
+  }
+}
