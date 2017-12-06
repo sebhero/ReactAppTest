@@ -1,8 +1,12 @@
-export default class MyComp extends React.Component{
+// import {Component} from "react";
+// export default class MyComp extends React.Component<Component>{
 
-    render(){
-        return(
-            <div>MYCompaaaaaa</div>
-        );
+
+//import {Component} from 'react';
+
+export default class MyComp extends React.Component implements React.Component {
+
+    render() {
+        return <div>MYComp!</div>;
     }
 }
